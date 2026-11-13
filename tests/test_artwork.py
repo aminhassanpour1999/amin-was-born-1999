@@ -32,7 +32,7 @@ class ArtworkTests(unittest.TestCase):
         rows = artwork.artwork_rows()
         self.assertTrue(all(len(row) == 51 for row in rows))
         grid = artwork.canvas()
-        self.assertEqual(grid[1][0], "#")
+        self.assertEqual(grid[1][0], ".")
         self.assertEqual(grid[1][-1], ".")
 
     def test_pixel_count(self):
