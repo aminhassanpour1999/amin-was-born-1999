@@ -103,7 +103,7 @@ def run(mode: str, email: str) -> None:
             raise SystemExit("The TEST commit already exists; refusing to duplicate it.")
         test_date = pixel_dates()[0][2]
         git_empty_commit(f"{TEST_MARKER} Verify historical attribution", test_date, email)
-        print("Created one TEST commit dated 1999-12-31.")
+        print(f"Created one TEST commit dated {test_date.isoformat()}.")
         return
 
     if not marker_exists(TEST_MARKER):
