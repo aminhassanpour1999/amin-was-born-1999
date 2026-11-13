@@ -1,10 +1,11 @@
 # AMIN WAS BORN — 1999
 
-A small piece of personal pixel art drawn on the GitHub contribution graph using empty commits dated in 1999.
+A personal pixel-art tribute drawn on the GitHub contribution graph with empty Git commits dated in 1999.
 
 **Artwork:** `AMIN WAS BORN`  
 **Year:** 1999  
-**Pixels / artwork commits:** 121  
+**Artwork pixels:** 121  
+**Artwork commits:** 121  
 **Canvas:** 52 weeks × 7 days. The first and last rows are intentionally empty; the lettering occupies Monday–Friday.
 
 ## Preview
@@ -19,24 +20,46 @@ A small piece of personal pixel art drawn on the GitHub contribution graph using
 ....................................................
 ```
 
-The preview is generated from the same bitmap font used by the script. The complete phrase is **AMIN WAS BORN**; no letter is abbreviated or omitted.
+The preview is generated from the same bitmap font used by the script. The complete phrase is **AMIN WAS BORN**.
 
-## Safe, two-stage workflow
+## Project status
 
-1. Open **Actions → Draw 1999 artwork**.
-2. Run with `mode=TEST`, `confirmation=YES`, and an email address verified on your GitHub account.
-3. Confirm the single test commit appears in the 1999 contribution graph.
-4. Only after that confirmation, run again with `mode=FULL` and `confirmation=YES`.
+## Completed artwork
+The complete artwork has already been generated and pushed to the `main` branch. The 121 artwork commits are numbered `001/121` through `121/121`, use unique dates in 1999, and share the same repository tree (they do not modify project files).
 
-The full run creates exactly 121 empty commits, one per lit pixel. The TEST commit shares the first artwork pixel's date, so it does not add an extra dot. It does not rewrite history or force-push.
+A separate TEST commit was created on the date of the first artwork pixel to verify contribution attribution. It overlaps that pixel's date and is not an additional artwork pixel.
 
-## Local checks
+**Do not run the FULL workflow again on this completed history.** The script includes a duplicate-run guard and will refuse to generate the artwork a second time.
+
+## Repository structure
+
+- `a_m_in_was_born.py` — bitmap font, layout, date mapping, preview, and commit generation.
+- `tests/test_artwork.py` — automated checks for the artwork geometry and pixel data.
+- `docs/DESIGN.md` — design and layout decisions.
+- `.github/workflows/draw-1999.yml` — manual GitHub Actions workflow for validation and controlled generation.
+
+## Local validation
+
+Python 3.12 or newer is recommended. No third-party packages are required.
+
+Run the test suite:
 
 ```bash
 python3 -m unittest discover -s tests -v
+```
+
+Render the artwork preview without creating commits:
+
+```bash
 python3 a_m_in_was_born.py --preview
 ```
 
-## Important
+## Historical contribution notes
 
-GitHub contribution visibility depends on commit attribution and GitHub's contribution rules. The TEST run exists to verify visibility before creating the full artwork.
+GitHub's contribution graph applies its own attribution and display rules. Commits are authored with the account's verified email address and placed on the default branch. The one-pixel TEST run was used to verify that the historical year is attributed correctly before the full generation.
+
+The generated commits intentionally have no file changes: the contribution graph is the artwork.
+
+## License
+
+This project is released under the MIT License. See [LICENSE](LICENSE).
