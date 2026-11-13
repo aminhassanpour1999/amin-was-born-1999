@@ -7,9 +7,7 @@ import argparse
 import subprocess
 from datetime import date, datetime, time, timedelta, timezone
 
-YEAR = 1999
 CANVAS_WEEKS = 52
-CANVAS_DAYS = 7
 TEST_MARKER = "[AMIN-WAS-BORN-1999-TEST]"
 FULL_MARKER = "[AMIN-WAS-BORN-1999-FULL]"
 PHRASE = "AMIN WAS BORN"
@@ -103,7 +101,8 @@ def run(mode: str, email: str) -> None:
     if mode == "test":
         if marker_exists(TEST_MARKER):
             raise SystemExit("The TEST commit already exists; refusing to duplicate it.")
-        git_empty_commit(f"{TEST_MARKER} Verify historical attribution", date(1999, 12, 31), email)
+        test_date = pixel_dates()[0][2]
+        git_empty_commit(f"{TEST_MARKER} Verify historical attribution", test_date, email)
         print("Created one TEST commit dated 1999-12-31.")
         return
 
@@ -118,8 +117,7 @@ def run(mode: str, email: str) -> None:
             f"{FULL_MARKER} pixel {index:03d}/{len(pixels)} at week {x + 1}, weekday {y}",
             pixel_date, email,
         )
-    git_empty_commit(f"{FULL_MARKER} completion marker ({len(pixels)} pixels)", date(1999, 12, 18), email)
-    print(f"Created {len(pixels)} artwork commits and one completion marker.")
+    print(f"Created exactly {len(pixels)} artwork commits.")
 
 
 def main() -> None:
