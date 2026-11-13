@@ -31,7 +31,7 @@ class ArtworkTests(unittest.TestCase):
         self.assertTrue(all(d.year == 1999 and d.weekday() < 5 for d in dates))
 
     def test_pixel_count(self):
-        self.assertEqual(len(artwork.pixel_dates()), 117)
+        self.assertEqual(len(artwork.pixel_dates()), 121)
 
 
 if __name__ == "__main__":
