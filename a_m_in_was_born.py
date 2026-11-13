@@ -17,7 +17,7 @@ PHRASE = "AMIN WAS BORN"
 FONT = {
     "A": ("010", "101", "111", "101", "101"),
     "M": ("10001", "11011", "10101", "10001", "10001"),
-    "I": ("1", "1", "1", "1", "1"),
+    "I": ("111", "010", "010", "010", "111"),
     "N": ("1001", "1101", "1011", "1001", "1001"),
     "W": ("10001", "10001", "10101", "10101", "01010"),
     "S": ("111", "100", "111", "001", "111"),
@@ -124,7 +124,7 @@ def run(mode: str, email: str) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=PHRASE)
-    parser.add_argument("--mode", choices=("test", "full"), default="preview")
+    parser.add_argument("--mode", choices=("test", "full", "preview"), default="preview")
     parser.add_argument("--email", default="")
     parser.add_argument("--preview", action="store_true")
     args = parser.parse_args()
