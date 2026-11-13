@@ -11,11 +11,11 @@ A small piece of personal pixel art drawn on the GitHub contribution graph using
 
 ```text
 ....................................................
-.#. #...# ### #..#  #...# .#. ###  ##. ### ##. #..#.
-#.# ##.## .#. ##.#  #...# #.# #..  #.# #.# #.# ##.#.
-### #.#.# .#. #.##  #.#.# ### ###  ##. #.# ##. #.##.
-#.# #...# .#. #..#  #.#.# #.# ..#  #.# #.# #.# #..#.
-#.# #...# ### #..#  .#.#. #.# ###  ##. ### #.# #..#.
+.#..#...#.###.#..#..#...#..#..###..##..###.##..#..#.
+#.#.##.##..#..##.#..#...#.#.#.#....#.#.#.#.#.#.##.#.
+###.#.#.#..#..#.##..#.#.#.###.###..##..#.#.##..#.##.
+#.#.#...#..#..#..#..#.#.#.#.#...#..#.#.#.#.#.#.#..#.
+#.#.#...#.###.#..#...#.#..#.#.###..##..###.#.#.#..#.
 ....................................................
 ```
 
@@ -28,7 +28,7 @@ The preview is generated from the same bitmap font used by the script. The compl
 3. Confirm the single test commit appears in the 1999 contribution graph.
 4. Only after that confirmation, run again with `mode=FULL` and `confirmation=YES`.
 
-The full run creates exactly one empty commit per lit pixel. It does not rewrite history or force-push.
+The full run creates exactly 121 empty commits, one per lit pixel. The TEST commit shares the first artwork pixel's date, so it does not add an extra dot. It does not rewrite history or force-push.
 
 ## Local checks
 
