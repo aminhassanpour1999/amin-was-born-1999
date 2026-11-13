@@ -1,6 +1,4 @@
 import unittest
-from datetime import date
-
 import a_m_in_was_born as artwork
 
 
@@ -29,6 +27,13 @@ class ArtworkTests(unittest.TestCase):
         dates = [item[2] for item in artwork.pixel_dates()]
         self.assertEqual(len(dates), len(set(dates)))
         self.assertTrue(all(d.year == 1999 and d.weekday() < 5 for d in dates))
+
+    def test_artwork_width_and_centering(self):
+        rows = artwork.artwork_rows()
+        self.assertTrue(all(len(row) == 51 for row in rows))
+        grid = artwork.canvas()
+        self.assertEqual(grid[1][0], "#")
+        self.assertEqual(grid[1][-1], ".")
 
     def test_pixel_count(self):
         self.assertEqual(len(artwork.pixel_dates()), 121)
