@@ -22,9 +22,8 @@ A personal pixel-art tribute drawn on the GitHub contribution graph with empty G
 
 The preview is generated from the same bitmap font used by the script. The complete phrase is **AMIN WAS BORN**.
 
-## Project status
-
 ## Completed artwork
+
 The complete artwork has already been generated and pushed to the `main` branch. The 121 artwork commits are numbered `001/121` through `121/121`, use unique dates in 1999, and share the same repository tree (they do not modify project files).
 
 A separate TEST commit was created on the date of the first artwork pixel to verify contribution attribution. It overlaps that pixel's date and is not an additional artwork pixel.
